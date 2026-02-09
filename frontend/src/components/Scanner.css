@@ -1,0 +1,374 @@
+.scanner-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.scanner-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.scanner-header h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.scanner-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+.scanner-form {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.url-input {
+  flex: 1;
+  padding: 18px 24px;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.url-input:focus {
+  border-color: #3b82f6;
+}
+
+.url-input:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.scan-button {
+  padding: 18px 32px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.scan-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(59, 130, 246, 0.4);
+}
+
+.scan-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.result-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header {
+  padding: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.risk-score {
+  position: relative;
+}
+
+.score-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.score-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.risk-info h2 {
+  font-size: 1.75rem;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.risk-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.analyzed-url {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  word-break: break-all;
+  margin: 0;
+}
+
+.result-body {
+  padding: 40px;
+}
+
+.details-section,
+.indicators-section,
+.recommendation-section {
+  margin-bottom: 32px;
+}
+
+.details-section h3,
+.indicators-section h3,
+.recommendation-section h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.detail-item {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.indicators-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.indicator-item {
+  background: #f9fafb;
+  border-left: 4px solid;
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.indicator-item:hover {
+  transform: translateX(4px);
+}
+
+.indicator-item.severity-high {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+.indicator-item.severity-medium {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.indicator-item.severity-low {
+  border-left-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.indicator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.indicator-type {
+  font-weight: 600;
+  color: #1f2937;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+}
+
+.severity-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.severity-badge.high {
+  background: #ef4444;
+  color: white;
+}
+
+.severity-badge.medium {
+  background: #f59e0b;
+  color: white;
+}
+
+.severity-badge.low {
+  background: #3b82f6;
+  color: white;
+}
+
+.indicator-description {
+  color: #4b5563;
+  margin: 0 0 8px 0;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.indicator-impact {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.recommendation {
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+.recommendation.danger {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.recommendation.safe {
+  background: #f0fdf4;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.recommendation strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.recommendation p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .scanner-header h1 {
+    font-size: 2rem;
+  }
+
+  .result-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .result-body {
+    padding: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .url-input,
+  .scan-button {
+    border-radius: 12px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
